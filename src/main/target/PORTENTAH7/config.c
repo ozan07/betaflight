@@ -39,8 +39,10 @@ static targetSerialPortFunction_t targetSerialPortFunction[] = {
 void targetConfiguration(void)
 {
     targetSerialPortFunctionConfig(targetSerialPortFunction, ARRAYLEN(targetSerialPortFunction));
+	/*
 #if !defined(PORTENTAH7_RAMBASED)
     sdcardConfigMutable()->mode = SDCARD_MODE_SDIO;
 #endif
+*/
 }
 #endif
