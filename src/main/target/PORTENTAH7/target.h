@@ -314,6 +314,11 @@
 #define TARGET_IO_PORTE 0xffff
 #define TARGET_IO_PORTF 0xffff
 #define TARGET_IO_PORTG 0xffff
+#define TARGET_IO_PORTH 0xffff
+#define TARGET_IO_PORTI 0xffff
+#define TARGET_IO_PORTJ 0xffff
+#define TARGET_IO_PORTK 0xffff
+
 
 #define USABLE_TIMER_CHANNEL_COUNT 4
 
