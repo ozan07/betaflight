@@ -157,6 +157,16 @@ const timerHardware_t fullTimerHardware[FULL_TIMER_CHANNEL_COUNT] = {
 //    DEF_TIM(TIM8, CH1N, PH13, TIM_USE_ANY, 0, 0, 0),
 //    DEF_TIM(TIM8, CH2N, PH14, TIM_USE_ANY, 0, 0, 0),
 //    DEF_TIM(TIM8, CH3N, PH15, TIM_USE_ANY, 0, 0, 0),
+
+
+// Port K   Table 7. STM32H747xI/G pin/ball definition
+    DEF_TIM(TIM1, CH1N, PK0, TIM_USE_ANY, 0, 0, 0),
+    DEF_TIM(TIM8, CH3, PK0, TIM_USE_ANY, 0, 0, 0),
+    
+    DEF_TIM(TIM1, CH1, PK1, TIM_USE_ANY, 0, 0, 0),
+    DEF_TIM(TIM8, CH3N, PK1, TIM_USE_ANY, 0, 0, 0),
+	
+
 };
 #endif
 
