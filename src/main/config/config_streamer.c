@@ -62,7 +62,7 @@ uint8_t eepromData[EEPROM_SIZE];
 # elif defined(UNIT_TEST)
 #  define FLASH_PAGE_SIZE                 (0x400)
 // H7
-# elif defined(STM32H743xx) || defined(STM32H750xx) || defined(STM32H723xx) || defined(STM32H725xx) || defined(STM32H730xx)
+# elif defined(STM32H743xx) || defined(STM32H750xx) || defined(STM32H723xx) || defined(STM32H725xx) || defined(STM32H730xx) || defined(STM32H747xx)
 #  define FLASH_PAGE_SIZE                 ((uint32_t)0x20000) // 128K sectors
 # elif defined(STM32H7A3xx) || defined(STM32H7A3xxQ)
 #  define FLASH_PAGE_SIZE                 ((uint32_t)0x2000) // 8K sectors
