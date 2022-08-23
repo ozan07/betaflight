@@ -28,7 +28,9 @@ enum TestPinEnum {
     PG0, PG1, PG2, PG3, PG4, PG5, PG6, PG7, PG8, PG9,
     PG10, PG11, PG12, PG13, PG14, PG15,
     PH0, PH1, PH2, PH3, PH4, PH5, PH6, PH7, PH8, PH9,
-    PH10, PH11, PH12, PH13, PH14, PH15, TEST_PIN_SIZE,
+    PH10, PH11, PH12, PH13, PH14, PH15, 
+	PK0, PK1, PK2, PK3, PK4, PK5, PK6, PK7, PK8, PK9,
+    PK10, PK11, PK12, PK13, PK14, PK15, TEST_PIN_SIZE,
 };
 
 // Keep this in sync with TestPinEnum above.
@@ -49,6 +51,8 @@ const char *const TEST_PIN_NAMES[TEST_PIN_SIZE] = {
     "PG10", "PG11", "PG12", "PG13", "PG14", "PG15",
     "PH0", "PH1", "PH2", "PH3", "PH4", "PH5", "PH6", "PH7", "PH8", "PH9",
     "PH10", "PH11", "PH12", "PH13", "PH14", "PH15",
+	"PK0", "PK1", "PK2", "PK3", "PK4", "PK5", "PK6", "PK7", "PK8", "PK9",
+    "PK10", "PK11", "PK12", "PK13", "PK14", "PK15",
 };
 
 enum TestTimUseEnum {
