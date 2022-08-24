@@ -825,8 +825,9 @@
 
 //PORTK
 #define DEF_TIM_AF__PK0__TCH_TIM1_CH1N     D(1, 1)
-#define DEF_TIM_AF__PK0__TCH_TIM8_CH3     D(3, 8)
-#define DEF_TIM_AF__PK1__TCH_TIM1_CH1     D(1, 1)
+#define DEF_TIM_AF__PK0__TCH_TIM8_CH3      D(3, 8)
+#define DEF_TIM_AF__PK1__TCH_TIM1_CH1      D(1, 1)
+#define DEF_TIM_AF__PK1__TCH_TIM8_CH3N     D(3, 8)
 
 
 #elif defined(STM32G4)
