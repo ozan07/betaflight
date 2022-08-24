@@ -97,9 +97,9 @@
 #define USE_SPI
 
 #define USE_SPI_DEVICE_1
-#define SPI2_SCK_PIN            NONE
-#define SPI2_MISO_PIN           NONE
-#define SPI2_MOSI_PIN           NONE
+#define SPI1_SCK_PIN            NONE
+#define SPI1_MISO_PIN           NONE
+#define SPI1_MOSI_PIN           NONE
 
 #define USE_SPI_DEVICE_2
 #define SPI2_SCK_PIN            PI1
@@ -145,57 +145,58 @@
 
 #define QUADSPI1_MODE QUADSPI_MODE_BK1_ONLY
 #define QUADSPI1_CS_FLAGS (QUADSPI_BK1_CS_HARDWARE | QUADSPI_BK2_CS_NONE | QUADSPI_CS_MODE_LINKED)
-*/
 
 
-/*
-#if !defined(PORTENTAH7_RAMBASED)
+
+// *************** SDIO BLACKBOX*******************
 
 #define USE_SDCARD
 #define USE_SDCARD_SDIO
 #define SDCARD_DETECT_PIN       NONE
-
-// SDMMC1
-// CK  PC12
-// CMD PD2
-// D0  PC8
-// D1  PC9
-// D2  PC10
-// D3  PC11
-
-// SDIO configuration for SDMMC1, 1-bit width
-#define SDIO_DEVICE             SDIODEV_2 // SDIODEV_1 (for SDMMC1) or SDIODEV_2 (for SDMMC2) (or SDIOINVALID)
-#define SDIO_USE_4BIT           false
-#define SDIO_CK_PIN             PD6       // SDMMC1: PC12  SDMMC2: PC1 or PD6
-#define SDIO_CMD_PIN            PD7       // SDMMC1: PD2   SDMMC2: PA0 or PD7
-#define SDIO_D0_PIN             PB14      // SDMMC1: PC8   SDMMC2: PB14
-#define SDIO_D1_PIN             NONE      // SDMMC1: PC9   SDMMC2: PB15
-#define SDIO_D2_PIN             NONE      // SDMMC1: PC10  SDMMC2: PB3
-#define SDIO_D3_PIN             NONE      // SDMMC2: PC11  SDMMC2: PB4
+#define SDIO_DEVICE             SDIODEV_1
+#define SDIO_USE_4BIT           true
+#define SDIO_CK_PIN             PC12
+#define SDIO_CMD_PIN            PD2
+#define SDIO_D0_PIN             PC8
+#define SDIO_D1_PIN             PC9
+#define SDIO_D2_PIN             PC10
+#define SDIO_D3_PIN             PC11
 
 #define USE_BLACKBOX
 #define ENABLE_BLACKBOX_LOGGING_ON_SDCARD_BY_DEFAULT
-#endif
 
-*/
 
 #define USE_I2C
+
 #define USE_I2C_DEVICE_1
+#define I2C_DEVICE_1            (I2CDEV_1)
 #define I2C1_SCL                PB6
 #define I2C1_SDA                PB7
-#define I2C_DEVICE (I2CDEV_1)
 
-#define USE_I2C
+#define MAG_I2C_INSTANCE        (I2CDEV_1)
+#define USE_MAG
+#define USE_MAG_HMC5883
+#define USE_MAG_QMC5883
+#define USE_MAG_LIS3MDL
+
+
 #define USE_I2C_DEVICE_3
+#define I2C_DEVICE_3            (I2CDEV_3)
 #define I2C3_SCL                PH7
 #define I2C3_SDA                PH8
-#define I2C_DEVICE (I2CDEV_3)
 
-#define USE_I2C
+#define BARO_I2C_INSTANCE       (I2CDEV_2)
+#define USE_BARO
+#define DEFAULT_BARO_MS5611
+#define USE_BARO_MS5611
+#define USE_BARO_BMP280
+#define USE_BARO_DPS310
+
+
 #define USE_I2C_DEVICE_4
 #define I2C4_SCL                PH11
 #define I2C4_SDA                PH12
-#define I2C_DEVICE (I2CDEV_4)
+#define I2C_DEVICE_4 (I2CDEV_4)
 
 #define USE_MAG
 #define USE_FAKE_MAG

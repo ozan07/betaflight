@@ -149,7 +149,7 @@ const timerHardware_t fullTimerHardware[FULL_TIMER_CHANNEL_COUNT] = {
 
 // Port H
 // Port H is not available for LPQFP-100 or 144 and TFBGA-100 package
-//    DEF_TIM(TIM12, CH1, PH6, TIM_USE_ANY, 0, 0, 0),
+    DEF_TIM(TIM12, CH1, PH6, TIM_USE_ANY, 0, 0, 0),
 //    DEF_TIM(TIM12, CH2, PH9, TIM_USE_ANY, 0, 0, 0),
 //    DEF_TIM(TIM5, CH1, PH10, TIM_USE_ANY, 0, 0, 0),
 //    DEF_TIM(TIM5, CH2, PH11, TIM_USE_ANY, 0, 0, 0),
@@ -159,9 +159,12 @@ const timerHardware_t fullTimerHardware[FULL_TIMER_CHANNEL_COUNT] = {
 //    DEF_TIM(TIM8, CH3N, PH15, TIM_USE_ANY, 0, 0, 0),
 
 
-// Port K   Table 7. STM32H747xI/G pin/ball definition
-    DEF_TIM(TIM1, CH1N, PK0, TIM_USE_ANY, 0, 0, 0),
+// Port J   Table 7. STM32H747xI/G pin/ball definition
+    DEF_TIM(TIM1, CH2, PJ11, TIM_USE_ANY, 0, 0, 0),
     DEF_TIM(TIM8, CH3, PK0, TIM_USE_ANY, 0, 0, 0),
+	DEF_TIM(TIM8, CH2, PJ10, TIM_USE_ANY, 0, 0, 0),
+
+
     
     DEF_TIM(TIM1, CH1, PK1, TIM_USE_ANY, 0, 0, 0),
     DEF_TIM(TIM8, CH3N, PK1, TIM_USE_ANY, 0, 0, 0),
