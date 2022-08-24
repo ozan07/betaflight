@@ -814,8 +814,6 @@
 #endif
 
 //PORTH
-#define DEF_TIM_AF__PH6__TCH_TIM12_CH1    D(2, 12)
-#define DEF_TIM_AF__PH9__TCH_TIM12_CH2    D(2, 12)
 #define DEF_TIM_AF__PH10__TCH_TIM5_CH1    D(2, 5)
 #define DEF_TIM_AF__PH11__TCH_TIM5_CH2    D(2, 5)
 #define DEF_TIM_AF__PH12__TCH_TIM5_CH3    D(2, 5)
@@ -830,11 +828,17 @@
 #define DEF_TIM_AF__PI6__TCH_TIM8_CH2     D(3, 8)
 #define DEF_TIM_AF__PI7__TCH_TIM8_CH3     D(3, 8)
 
+//PORTJ
+#define DEF_TIM_AF__PJ11__TCH_TIM1_CH2     D(1, 1)
+#define DEF_TIM_AF__PJ10__TCH_TIM8_CH2     D(3, 8)
+
 //PORTK
 #define DEF_TIM_AF__PK0__TCH_TIM1_CH1N     D(1, 1)
 #define DEF_TIM_AF__PK0__TCH_TIM8_CH3      D(3, 8)
 #define DEF_TIM_AF__PK1__TCH_TIM1_CH1      D(1, 1)
 #define DEF_TIM_AF__PK1__TCH_TIM8_CH3N     D(3, 8)
+
+
 
 
 #elif defined(STM32G4)
