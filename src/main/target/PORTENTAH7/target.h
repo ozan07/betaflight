@@ -279,10 +279,10 @@
 #define USE_ADC
 
 // DMA stream assignmnets
-#define VBAT_ADC_PIN            PC2_C  // ADC1
-#define CURRENT_METER_ADC_PIN   PC3_C  // ADC1
+#define VBAT_ADC_PIN            PA4  // ADC1
+#define CURRENT_METER_ADC_PIN   PA6  // ADC1
 //#define RSSI_ADC_PIN            PF14 // ADC2
-#define EXTERNAL1_ADC_PIN       PA4  // ADC3
+#define EXTERNAL1_ADC_PIN       PC2  // ADC3
 
 #define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
 #define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
