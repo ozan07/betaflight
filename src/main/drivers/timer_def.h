@@ -478,7 +478,7 @@
 
 //PORTJ
 #define DEF_TIM_AF__PJ11__TCH_TIM1_CH2     D(1, 1)
-#define DEF_TIM_AF__PJ12__TCH_TIM8_CH2     D(3, 8)
+#define DEF_TIM_AF__PJ10__TCH_TIM8_CH2     D(3, 8)
 
 
 
