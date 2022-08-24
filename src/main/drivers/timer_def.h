@@ -818,11 +818,14 @@
 
 //PORTI
 #define DEF_TIM_AF__PI0__TCH_TIM5_CH4     D(2, 5)
-
 #define DEF_TIM_AF__PI2__TCH_TIM8_CH4     D(3, 8)
 #define DEF_TIM_AF__PI5__TCH_TIM8_CH1     D(3, 8)
 #define DEF_TIM_AF__PI6__TCH_TIM8_CH2     D(3, 8)
 #define DEF_TIM_AF__PI7__TCH_TIM8_CH3     D(3, 8)
+
+//PORTK
+#define DEF_TIM_AF__PK0__TCH_TIM1_CH1     D(1, 1)
+#
 
 #elif defined(STM32G4)
 
