@@ -49,6 +49,7 @@
 #define BEEPER_INVERTED
 */
 
+#undef USE_MULTI_GYRO // XXX Drop this if target has I2C configured
 
 
 #define USE_ACC
@@ -203,7 +204,7 @@
 #define I2C1_SCL                PB6
 #define I2C1_SDA                PB7
 
-#define MAG_I2C_INSTANCE        (I2CDEV_1)
+//#define MAG_I2C_INSTANCE        (I2CDEV_1)
 
 
 #define USE_I2C_DEVICE_3
@@ -211,7 +212,7 @@
 #define I2C3_SCL                PH7
 #define I2C3_SDA                PH8
 
-#define BARO_I2C_INSTANCE       (I2CDEV_2)
+//#define BARO_I2C_INSTANCE       (I2CDEV_2)
 
 #define USE_I2C_DEVICE_4
 #define I2C4_SCL                PH11
@@ -233,21 +234,9 @@
 #define USE_TIMER
 #define USE_PWM_OUTPUT
 #define USE_MOTOR
-/*
-#define USE_RANGEFINDER
-#define USE_RANGEFINDER_HCSR04
-#define USE_RANGEFINDER_TF
 
-#define USE_TRANSPONDER
 
-#define USE_MAX7456
-#define MAX7456_SPI_INSTANCE    NULL // SPI3
-#define MAX7456_SPI_CS_PIN      NONE // PC9
-
-#define USE_I2C_OLED_DISPLAY
-*/
 #define USE_ADC
-
 // DMA stream assignmnets
 #define VBAT_ADC_PIN            PA4  // ADC1
 #define CURRENT_METER_ADC_PIN   PA6  // ADC1
@@ -261,7 +250,11 @@
 #define USE_DSHOT_DMAR
 
 #define USE_DMA
+#define ADC1_DMA_OPT 8
+#define ADC3_DMA_OPT 9
 
+#define USE_ADC
+#define USE_ADC_INTERNAL   // ADC3
 // Thanks to DMAMUX, H7 does not have limitations on DMA stream assignments to devices (except for collisions among them).
 //#define UART1_TX_DMA_OPT        0
 //#define UART2_TX_DMA_OPT        1
@@ -292,4 +285,6 @@
 
 #define USABLE_TIMER_CHANNEL_COUNT 4
 
-#define USED_TIMERS  ( TIM_N(1) | TIM_N(8) )
+#define USED_TIMERS  ( TIM_N(2) | TIM_N(3) | TIM_N(4) | TIM_N(8) | TIM_N(9) | TIM_N(12) )
+#define DEFAULT_RX_FEATURE      FEATURE_RX_SERIAL
+#define SERIALRX_PROVIDER       SERIALRX_SBUS
