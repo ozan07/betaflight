@@ -28,9 +28,9 @@
 #define USE_DEBUG_PIN
 #define DEBUG_PIN_COUNT         1
 
-#define LED0_PIN                PA8
-#define LED1_PIN                PC7 
-#define LED2_PIN                PD7 
+#define LED0_PIN                PK5
+#define LED1_PIN                PK6 
+#define LED2_PIN                PK7 
 
 // Use explicit cache management as per https://github.com/betaflight/betaflight/pull/10378
 #define USE_LEDSTRIP_CACHE_MGMT
@@ -48,6 +48,30 @@
 #define BEEPER_PIN              PE3
 #define BEEPER_INVERTED
 */
+
+#define USE_ACC
+#define USE_FAKE_ACC
+#define USE_ACC_MPU6050
+
+#define USE_GYRO
+#define USE_FAKE_GYRO
+#define USE_GYRO_MPU6050
+
+#define USE_MAG
+#define USE_FAKE_MAG
+#define USE_MAG_HMC5883
+#define USE_MAG_QMC5883
+#define USE_MAG_LIS3MDL
+#define MAG_HMC5883_ALIGN CW270_DEG_FLIP
+
+#define USE_BARO
+#define USE_FAKE_BARO
+#define USE_BARO_MS5611
+#define USE_BARO_SPI_BMP388
+#define BARO_SPI_INSTANCE       SPI1
+#define BARO_CS_PIN             SPI1_NSS_PIN
+
+
 #define USE_UART
 
 #define USE_UART1
@@ -198,10 +222,6 @@
 #define I2C4_SDA                PH12
 #define I2C_DEVICE_4 (I2CDEV_4)
 
-#define USE_MAG
-#define USE_FAKE_MAG
-#define USE_MAG_HMC5883
-#define USE_MAG_QMC5883
 /*
 #define USE_MAG
 #define USE_MAG_HMC5883
