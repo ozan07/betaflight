@@ -78,8 +78,12 @@
 #define BARO_SPI_INSTANCE       SPI2
 #define BARO_CS_PIN             SPI2_NSS_PIN
 
+#define USABLE_TIMER_CHANNEL_COUNT 11
 
-#define USE_UART
+#define USE_VCP
+#define USE_USB_DETECT
+#define USB_DETECT_PIN   PA9
+
 
 #define USE_UART1
 #define UART1_RX_PIN            PA10
@@ -118,12 +122,14 @@
 #define LPUART1_TX_PIN          PB6 // PA9 (Shared with UART1)
 */
 
-#define USE_VCP
+#define USE_SOFTSERIAL1
+#define USE_SOFTSERIAL2
 
-//#define USE_SOFTSERIAL1
-//#define USE_SOFTSERIAL2
+#define SERIAL_PORT_COUNT       7
 
-#define SERIAL_PORT_COUNT       5
+#define USE_ESCSERIAL
+#define ESCSERIAL_TIMER_TX_PIN  PB15 // (Hardware=0, PPM)
+
 
 #define USE_SPI
 
@@ -157,27 +163,6 @@
 #define SPI6_SCK_PIN            NONE
 #define SPI6_MISO_PIN           NONE
 #define SPI6_MOSI_PIN           NONE
-
-#define USE_QUADSPI
-#define USE_QUADSPI_DEVICE_1
-
-#define QUADSPI1_SCK_PIN        NONE // PB2
-
-#define QUADSPI1_BK1_IO0_PIN    NONE // PD11
-#define QUADSPI1_BK1_IO1_PIN    NONE // PD12
-#define QUADSPI1_BK1_IO2_PIN    NONE // PE2
-#define QUADSPI1_BK1_IO3_PIN    NONE // PD13
-#define QUADSPI1_BK1_CS_PIN     NONE // PB10
-
-#define QUADSPI1_BK2_IO0_PIN    NONE // PE7
-#define QUADSPI1_BK2_IO1_PIN    NONE // PE8
-#define QUADSPI1_BK2_IO2_PIN    NONE // PE9
-#define QUADSPI1_BK2_IO3_PIN    NONE // PE10
-#define QUADSPI1_BK2_CS_PIN     NONE // NONE
-
-#define QUADSPI1_MODE QUADSPI_MODE_BK1_ONLY
-#define QUADSPI1_CS_FLAGS (QUADSPI_BK1_CS_HARDWARE | QUADSPI_BK2_CS_NONE | QUADSPI_CS_MODE_LINKED)
-
 
 
 // *************** SDIO BLACKBOX*******************
@@ -230,11 +215,6 @@
 #define FLASH_CS_PIN            NONE
 #define USE_FLASHFS
 
-#define USE_BRUSHED_ESC_AUTODETECT  // Detect if brushed motors are connected and set defaults appropriately to avoid motors spinning on boot
-#define USE_GYRO_REGISTER_DUMP  // Adds gyroregisters command to cli to dump configured register values
-#define USE_TIMER
-#define USE_PWM_OUTPUT
-#define USE_MOTOR
 
 
 #define USE_ADC
@@ -247,25 +227,19 @@
 #define DEFAULT_VOLTAGE_METER_SOURCE VOLTAGE_METER_ADC
 #define DEFAULT_CURRENT_METER_SOURCE CURRENT_METER_ADC
 
+
+#define ENABLE_BLACKBOX_LOGGING_ON_SDCARD_BY_DEFAULT
+
+#define DEFAULT_RX_FEATURE      FEATURE_RX_SERIAL
+#define SERIALRX_PROVIDER       SERIALRX_SBUS
+
+#define USE_ADC
+#define USE_ADC_INTERNAL
 #define USE_DMA
 #define ADC1_DMA_OPT 8
 #define ADC2_DMA_OPT 9
 #define ADC3_DMA_OPT 10
 
-#define USE_ADC
-#define USE_ADC_INTERNAL   // ADC3
-// Thanks to DMAMUX, H7 does not have limitations on DMA stream assignments to devices (except for collisions among them).
-//#define UART1_TX_DMA_OPT        0
-//#define UART2_TX_DMA_OPT        1
-//#define UART3_TX_DMA_OPT        2
-//#define UART4_TX_DMA_OPT        3
-//#define UART5_TX_DMA_OPT        4
-//#define UART6_TX_DMA_OPT        5
-//#define UART7_TX_DMA_OPT        6
-//#define UART8_TX_DMA_OPT        7
-#define ADC1_DMA_OPT 8
-#define ADC2_DMA_OPT 9
-#define ADC3_DMA_OPT 10
 
 #define DEFAULT_FEATURE (FEATURE_OSD)
 
@@ -282,7 +256,7 @@
 #define TARGET_IO_PORTK 0xffff
 
 
-#define USABLE_TIMER_CHANNEL_COUNT 4
+#define USABLE_TIMER_CHANNEL_COUNT 6
 
 #define USED_TIMERS  ( TIM_N(2) | TIM_N(3) | TIM_N(4) | TIM_N(8) | TIM_N(9) | TIM_N(12) )
 #define DEFAULT_RX_FEATURE      FEATURE_RX_SERIAL
