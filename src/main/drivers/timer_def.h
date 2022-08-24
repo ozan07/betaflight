@@ -475,6 +475,13 @@
 #define DEF_TIM_AF__PI6__TCH_TIM8_CH2     D(3, 8)
 #define DEF_TIM_AF__PI7__TCH_TIM8_CH3     D(3, 8)
 
+
+//PORTJ
+#define DEF_TIM_AF__PJ11__TCH_TIM1_CH2     D(1, 1)
+#define DEF_TIM_AF__PJ12__TCH_TIM8_CH2     D(3, 8)
+
+
+
 #elif defined(STM32H7)
 #define DEF_TIM(tim, chan, pin, flags, out, dmaopt, upopt) {            \
     tim,                                                                \
