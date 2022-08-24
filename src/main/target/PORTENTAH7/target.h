@@ -63,25 +63,25 @@
 #define UART3_TX_PIN            PD8  // ST-LINK Virtual COM Port
 */
 #define USE_UART4
-#define UART4_RX_PIN            PA1_C
-#define UART4_TX_PIN            PA0_C
+#define UART4_RX_PIN            PI9
+#define UART4_TX_PIN            PA0
 /*
 #define USE_UART5
 #define UART5_RX_PIN            PD2
 #define UART5_TX_PIN            PC12
-
+*/
 #define USE_UART6
-#define UART6_RX_PIN            PC7
-#define UART6_TX_PIN            PC6
-
+#define UART6_RX_PIN            PG9
+#define UART6_TX_PIN            PG14
+/*
 #define USE_UART7
 #define UART7_RX_PIN            PE7
 #define UART7_TX_PIN            PE8
-
+*/
 #define USE_UART8
-#define UART8_RX_PIN            PE0
-#define UART8_TX_PIN            PE1
-
+#define UART8_RX_PIN            PJ9
+#define UART8_TX_PIN            PJ8
+/*
 #define USE_LPUART1
 #define LPUART1_RX_PIN          PB7 // PA10 (Shared with UART1)
 #define LPUART1_TX_PIN          PB6 // PA9 (Shared with UART1)
@@ -92,19 +92,19 @@
 //#define USE_SOFTSERIAL1
 //#define USE_SOFTSERIAL2
 
-#define SERIAL_PORT_COUNT       3
+#define SERIAL_PORT_COUNT       5
 
 #define USE_SPI
 
 #define USE_SPI_DEVICE_1
-#define SPI2_SCK_PIN            PI1
-#define SPI2_MISO_PIN           PC2
-#define SPI2_MOSI_PIN           PC3
-/*
-#define USE_SPI_DEVICE_2
 #define SPI2_SCK_PIN            NONE
 #define SPI2_MISO_PIN           NONE
 #define SPI2_MOSI_PIN           NONE
+
+#define USE_SPI_DEVICE_2
+#define SPI2_SCK_PIN            PI1
+#define SPI2_MISO_PIN           PC2
+#define SPI2_MOSI_PIN           PC3
 
 #define USE_SPI_DEVICE_3
 #define SPI3_SCK_PIN            PC10 // PC10
@@ -179,6 +179,11 @@
 
 */
 
+#define USE_I2C
+#define USE_I2C_DEVICE_1
+#define I2C1_SCL                PB6
+#define I2C1_SDA                PB7
+#define I2C_DEVICE (I2CDEV_1)
 
 #define USE_I2C
 #define USE_I2C_DEVICE_3
@@ -186,12 +191,11 @@
 #define I2C3_SDA                PH8
 #define I2C_DEVICE (I2CDEV_3)
 
-// For testing I2C4on APB4
-//#define USE_I2C_DEVICE_4
-//#define I2C4_SCL                PF14
-//#define I2C4_SDA                PF15
-//#define I2C_DEVICE (I2CDEV_4)
-
+#define USE_I2C
+#define USE_I2C_DEVICE_4
+#define I2C4_SCL                PH11
+#define I2C4_SDA                PH12
+#define I2C_DEVICE (I2CDEV_4)
 
 #define USE_MAG
 #define USE_FAKE_MAG
