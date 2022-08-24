@@ -123,6 +123,7 @@ const i2cHardware_t i2cHardware[I2CDEV_COUNT] = {
         .er_irq = I2C2_ER_IRQn,
     },
 #endif
+/*
 #ifdef USE_I2C_DEVICE_3
     {
         .device = I2CDEV_3,
@@ -133,7 +134,20 @@ const i2cHardware_t i2cHardware[I2CDEV_COUNT] = {
         .ev_irq = I2C3_EV_IRQn,
         .er_irq = I2C3_ER_IRQn,
     },
+#endif*/  //PORTENTA TEST
+
+#ifdef USE_I2C_DEVICE_3
+    {
+        .device = I2CDEV_3,
+        .reg = I2C3,
+        .sclPins = { I2CPINDEF(PH7, GPIO_AF4_I2C3) },
+        .sdaPins = { I2CPINDEF(PH8, GPIO_AF4_I2C3) },
+        .rcc = RCC_APB1L(I2C3),
+        .ev_irq = I2C3_EV_IRQn,
+        .er_irq = I2C3_ER_IRQn,
+    },
 #endif
+
 #ifdef USE_I2C_DEVICE_4
     {
         .device = I2CDEV_4,
