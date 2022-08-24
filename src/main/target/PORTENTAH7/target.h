@@ -75,8 +75,8 @@
 #define USE_FAKE_BARO
 #define USE_BARO_MS5611
 #define USE_BARO_SPI_BMP388
-#define BARO_SPI_INSTANCE       SPI1
-#define BARO_CS_PIN             SPI1_NSS_PIN
+#define BARO_SPI_INSTANCE       SPI2
+#define BARO_CS_PIN             SPI2_NSS_PIN
 
 
 #define USE_UART
@@ -136,6 +136,7 @@
 #define SPI2_SCK_PIN            PI1
 #define SPI2_MISO_PIN           PC2
 #define SPI2_MOSI_PIN           PC3
+#define SPI2_NSS_PIN            PI0
 
 #define USE_SPI_DEVICE_3
 #define SPI3_SCK_PIN            PC10 // PC10
