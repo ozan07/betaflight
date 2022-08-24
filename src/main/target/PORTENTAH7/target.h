@@ -49,6 +49,8 @@
 #define BEEPER_INVERTED
 */
 
+
+
 #define USE_ACC
 #define USE_FAKE_ACC
 #define USE_ACC_MPU6050
@@ -56,6 +58,10 @@
 #define USE_GYRO
 #define USE_FAKE_GYRO
 #define USE_GYRO_MPU6050
+#define GYRO_1_ALIGN       CW270_DEG
+
+// MPU6050 interrupts
+#define GYRO_1_EXTI_PIN    PB15
 
 #define USE_MAG
 #define USE_FAKE_MAG
@@ -198,10 +204,6 @@
 #define I2C1_SDA                PB7
 
 #define MAG_I2C_INSTANCE        (I2CDEV_1)
-#define USE_MAG
-#define USE_MAG_HMC5883
-#define USE_MAG_QMC5883
-#define USE_MAG_LIS3MDL
 
 
 #define USE_I2C_DEVICE_3
@@ -210,68 +212,11 @@
 #define I2C3_SDA                PH8
 
 #define BARO_I2C_INSTANCE       (I2CDEV_2)
-#define USE_BARO
-#define DEFAULT_BARO_MS5611
-#define USE_BARO_MS5611
-#define USE_BARO_BMP280
-#define USE_BARO_DPS310
-
 
 #define USE_I2C_DEVICE_4
 #define I2C4_SCL                PH11
 #define I2C4_SDA                PH12
 #define I2C_DEVICE_4 (I2CDEV_4)
-
-/*
-#define USE_MAG
-#define USE_MAG_HMC5883
-#define USE_MAG_SPI_HMC5883
-#define HMC5883_SPI_INSTANCE    NULL
-#define HMC5883_CS_PIN          NONE
-*/
-/*
-#define USE_BARO
-#define USE_BARO_LPS
-#define USE_BARO_BMP085
-#define USE_BARO_BMP280
-#define USE_BARO_BMP388
-#define USE_BARO_MS5611
-#define USE_BARO_SPI_BMP280
-#define BMP280_SPI_INSTANCE     NULL
-#define BMP280_CS_PIN           NONE
-*/
-
-#undef USE_MULTI_GYRO // XXX Drop this if target has I2C configured
-
-#define USE_ACC
-#define USE_FAKE_ACC
-#define USE_ACC_MPU6050
-
-#define USE_GYRO
-#define USE_FAKE_GYRO
-#define USE_GYRO_MPU6050
-#define GYRO_1_ALIGN       CW270_DEG
-
-/*
-#define USE_GYRO_SPI_MPU6000
-#define USE_ACC_SPI_MPU6000
-#define USE_GYRO_SPI_MPU6500
-#define USE_ACC_SPI_MPU6500
-#define USE_GYRO_SPI_MPU9250
-#define USE_ACC_SPI_MPU9250
-#define USE_GYRO_SPI_ICM42605
-#define USE_ACC_SPI_ICM42605
-#define USE_GYRO_SPI_ICM42688P
-#define USE_ACC_SPI_ICM42688P
-
-#define GYRO_1_CS_PIN           PD15
-#define GYRO_1_SPI_INSTANCE     SPI1
-
-*/
-// I2C acc/gyro test, may require to activate
-// set gyro_x_bustype = I2C
-// set gyro_x_i2cBus = <Bus ordinal of I2C_DEVICE>
-
 
 
 #define USE_FLASH_CHIP
