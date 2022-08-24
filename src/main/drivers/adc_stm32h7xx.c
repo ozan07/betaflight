@@ -84,7 +84,7 @@ const adcDevice_t adcHardware[ADCDEV_COUNT] = {
 
 adcDevice_t adcDevice[ADCDEV_COUNT];
 
-#if defined(STM32H743xx) || defined(STM32H750xx) || defined(STM32H723xx) || defined(STM32H725xx) || defined(STM32H730xx)
+#if defined(STM32H743xx) || defined(STM32H750xx) || defined(STM32H723xx) || defined(STM32H725xx) || defined(STM32H730xx) || defined(STM32H747xx)
 #define ADC_DEVICE_FOR_INTERNAL ADC_DEVICES_3
 #elif defined(STM32H7A3xx) || defined(STM32H7A3xxQ)
 #define ADC_DEVICE_FOR_INTERNAL ADC_DEVICES_2
@@ -105,10 +105,17 @@ const adcTagMap_t adcTagMap[] = {
     { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_VREFINT,    18 }, // 18 VREFINT
     { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_TEMPSENSOR, 17 }, // 17 VSENSE
     { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_VBAT,       16 }, // 16 VBAT/4
-#elif defined(STM32H743xx) || defined(STM32H750xx) // RM0433 Rev 7 Table 205. ADC interconnection
+#elif defined(STM32H743xx) || defined(STM32H750xx)  // RM0433 Rev 7 Table 205. ADC interconnection
     { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_VREFINT,    19 }, // 19 VREFINT
     { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_TEMPSENSOR, 18 }, // 18 VSENSE
     { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_VBAT,       17 }, // 17 VBAT/4
+
+// RM0433 Table 209. ADC interconnection	
+#elif defined(STM32H747xx) // RM0433 Rev 7 Table 205. ADC interconnection
+    { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_VREFINT,    19 }, // 19 VREFINT
+    { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_TEMPSENSOR, 18 }, // 18 VSENSE
+    { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_VBAT,       17 }, // 17 VBAT/4	
+	
 #elif defined(STM32H7A3xx) || defined(STM32H7A3xxQ) // RM0455 Rev 5 187. ADC interconnection
     { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_VREFINT,    19 }, // 19 VREFINT
     { DEFIO_TAG_E__NONE, ADC_DEVICE_FOR_INTERNAL,   ADC_CHANNEL_TEMPSENSOR, 18 }, // 18 VSENSE
@@ -143,6 +150,15 @@ const adcTagMap_t adcTagMap[] = {
     { DEFIO_TAG_E__PA5,  ADC_DEVICES_12,  ADC_CHANNEL_19, 19 },
     { DEFIO_TAG_E__PA6,  ADC_DEVICES_12,  ADC_CHANNEL_3,   3 },
     { DEFIO_TAG_E__PA7,  ADC_DEVICES_12,  ADC_CHANNEL_7,   7 },
+	
+	
+#if defined(STM32H747xx)
+    { DEFIO_TAG_E__PC2,  ADC_DEVICES_123,   ADC_CHANNEL_12,   12 },
+	{ DEFIO_TAG_E__PC3,  ADC_DEVICES_12,   ADC_CHANNEL_13,   13 },
+	{ DEFIO_TAG_E__PA4,  ADC_DEVICES_12,   ADC_CHANNEL_18,   18 },
+	{ DEFIO_TAG_E__PA6,  ADC_DEVICES_12,   ADC_CHANNEL_19,   19 },
+	
+#endif
 
 #if 0
     // Inputs available for packages larger than LQFP144
